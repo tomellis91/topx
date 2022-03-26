@@ -43,3 +43,9 @@ func Execute() {
 		os.Exit(1)
 	}
 }
+
+func init() {
+	rootCmd.Flags().StringVarP(&n, "number", "n", "", "(required) The top N number of results to return")
+	rootCmd.Flags().StringVarP(&path, "path", "p", "./data/numbers.txt", "The path to the file to search")
+	rootCmd.MarkFlagRequired("number")
+}
