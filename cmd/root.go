@@ -32,6 +32,8 @@ var rootCmd = &cobra.Command{
 	Short: "Scan a file and locate the top N values",
 	Long:  `Scan a large text file of integers and return the top N values.`,
 	Run: func(cmd *cobra.Command, args []string) {
+		ni, _ := strconv.Atoi(n)
+		scan(path, ni)
 	},
 }
 
